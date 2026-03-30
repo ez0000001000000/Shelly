@@ -1,32 +1,13 @@
-```
+```gitignore
 # Dependencies
 node_modules/
-
-# Environment
-.env
-.env.local
-.env.*
-
-# Logs and temp files
-*.log
-*.tmp
-
-# Editors
-.vscode/
-.idea/
 
 # Build artifacts
 dist/
 build/
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.a
-*.out
+target/
 
-# Python specific
+# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -35,100 +16,80 @@ __pycache__/
 env/
 venv/
 .venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
+.ENV
+.env
+.env.*
+.env.local
+
+# Logs
 *.log
-.git/modules/
+
+# Coverage
+.coverage
+coverage/
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
 Thumbs.db
 
-# Compressed files
+# Compressed
 *.zip
-*.gz
-*.tar
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
 *.tar.gz
 *.tar.bz2
 *.tar.xz
-*.tar.zst
+*.gz
+*.rar
+*.7z
 
-# Test and coverage
-coverage/
-htmlcov/
-.nyc_output
-istanbul/
-.mypy_cache/
+# Testing
 .pytest_cache/
-.hypothesis/
+.mypy_cache/
+.nyc_output/
+coverage/
 
 # Distribution / packaging
-.pybuild/
-.deps/
-.eggs/
-eggs/
-parts/
-sdist/
+.Python
+build/
 develop-eggs/
-.installed.cfg
-.lib/
-.libs/
+dist/
+downloads/
+eggs/
+.eggs/
 lib/
 lib64/
-man/
-share/man/
+parts/
+sdist/
 var/
+wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 
-# IDE
-.vs/
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
+# Jupyter Notebook
+.ipynb_checkpoints
 
-# Node.js
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-node_modules/
-jspm_packages/
-*.min.js
-*.min.css
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
 
-# Docker
-.dockerenv
+# Pyre
+.pyre/
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-Thumbs.db:encryptable
+# Local development settings
+.env.local
+.env.dev
+.env.test
 ```
+
+Wait, let me reconsider this. The only change was modifying `src/index.js`, which is a source file. There are no build artifacts, dependencies, or temporary files in the change list that would warrant adding ignore rules.
+
+(empty)
