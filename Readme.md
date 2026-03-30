@@ -1,99 +1,173 @@
-# 🤖 Project Detector
+# 🤖 Shelly v2.0 - AI-Powered Intent CLI
 
-An intelligent CLI tool that automatically detects your JavaScript/TypeScript project's package manager and configuration by analyzing lock files and manifest files.
+**The smartest way to run your projects.** Just type what you want in plain English – Shelly understands typos, natural language, and knows exactly what to do.
 
 ## ✨ Features
 
-- 🔍 **Auto-detection** of package managers (npm, yarn, pnpm, bun)
-- 📦 Analyzes `package.json`, `bun.lockb`, `pnpm-lock.yaml`, `package-lock.json`, `yarn.lock`
-- 🚀 Provides instant recommendations for install/run commands
-- 💡 AI-like suggestions for your project setup
+- **🧠 Natural Language Processing** - Type commands like "shelly fix my broken tests" or "shelly start the app"
+- **🎯 Advanced Typo Tolerance** - Uses Levenshtein distance algorithm to correct typos automatically ("cler" → "clean", "tset" → "test")
+- **🔍 Smart Project Detection** - Auto-detects Bun, pnpm, Yarn, or npm projects
+- **⚡ Auto-Install & Run** - Installs dependencies and runs scripts with one command
+- **🩺 Built-in Doctor** - Diagnoses and fixes common project issues
+- **🔒 Security Auditing** - Scans for vulnerabilities instantly
+- **🐳 Docker Generation** - Creates production-ready Dockerfiles automatically
 
 ## 🚀 Quick Start
 
-### Install
-
 ```bash
-npm install -g project-detector
-# or
-pnpm add -g project-detector
-# or
-bun add -g project-detector
+# Install globally
+npm install -g shelly
+
+# Or use directly with npx
+npx shelly start
 ```
 
-### Run
+## 💬 Usage Examples
+
+### Natural Language Commands
 
 ```bash
-project-detector
-# or simply
-pd
+# Start your app
+shelly start the app
+shelly launch
+shelly boot up the server
+shelly dev
+
+# Run tests (even with typos!)
+shelly test
+shelly fix my tsets       # Auto-corrected!
+shelly run the specs
+shelly verify everything
+
+# Build project
+shelly build
+shelly compile the code
+shelly make a bundle
+
+# Install dependencies
+shelly install
+shelly add react
+shelly get dependencies
+shelly setup the project
+
+# Clean project
+shelly clean
+shelly cler cache         # Auto-corrected!
+shelly purge everything
+shelly nuke node_modules
+
+# Diagnostics & Debugging
+shelly doctor
+shelly why is build failing
+shelly fix my broken app
+shelly diagnose issues
+
+# Security
+shelly audit
+shelly security scan
+shelly check for vulns
+
+# Docker
+shelly docker
+shelly make docker file
+shelly containerize this
 ```
 
-## 📋 What It Does
+### Traditional Commands (Still Work!)
 
-When you run the tool in a project directory, it:
+```bash
+shelly start [script]     # Auto-detect and run
+shelly detect             # Dry-run detection
+shelly install            # Install only
+shelly run [script]       # Run without installing
+shelly help               # Show help
+```
 
-1. **Scans** for lock files to determine your package manager
-2. **Reads** `package.json` to understand your scripts and dependencies
-3. **Suggests** the correct commands to install and run your project
+## 🤖 How It Works
+
+1. **Parse Intent** - Shelly analyzes your input using NLP
+2. **Correct Typos** - Uses Levenshtein distance to find closest match
+3. **Detect Project** - Scans for lockfiles (bun.lockb → pnpm-lock.yaml → yarn.lock → package-lock.json)
+4. **Execute** - Runs the appropriate command with your package manager
 
 ### Example Output
 
+```bash
+$ shelly fix my brokn tests
+
+🤖 Shelly v2.0 AI
+You said: "fix my brokn tests"
+Interpreted as: [test] (80% confidence)
+
+➜ Scanning project for package manager...
+✔ Detected pnpm via pnpm-lock.yaml
+➜ Installing dependencies...
+[install output...]
+✔ Dependencies installed successfully
+➜ Running "test" script with pnpm run...
+[test output...]
+✔ Project running successfully!
 ```
-🔍 Analyzing project...
 
-✅ Detected: pnpm
-📦 Lock file: pnpm-lock.yaml
-📄 Manifest: package.json
+## 📋 Supported Commands
 
-💡 Recommended commands:
-   Install:  pnpm install
-   Run dev:  pnpm run dev
-   Build:    pnpm run build
+| Intent | Keywords | Action |
+|--------|----------|--------|
+| **start** | start, run, launch, boot, begin, go, init | Install deps + run dev/start script |
+| **test** | test, testing, specs, check, verify, qa | Run test suite |
+| **build** | build, compile, bundle, package, dist | Build for production |
+| **install** | install, add, get, fetch, deps | Install dependencies |
+| **clean** | clean, clear, purge, wipe, rm, nuke | Remove node_modules & lockfiles |
+| **lint** | lint, format, style, prettier, eslint | Run linter |
+| **doctor** | doctor, fix, repair, debug, why, broken | Diagnose issues |
+| **audit** | audit, security, vuln, scan, safety | Security scan |
+| **docker** | docker, containerize, ship, deploy | Generate Dockerfile |
+| **update** | update, upgrade, refresh, latest | Update dependencies |
+| **dev** | dev, development, localhost, serve | Run development server |
 
-📊 Project Info:
-   Name: my-awesome-app
-   Version: 1.0.0
-   Scripts: dev, build, test, lint
-```
+## 🔧 Detection Priority
 
-## 🎯 Use Cases
+Shelly checks for package managers in this order:
 
-- **Quick onboarding**: Clone a repo and instantly know how to run it
-- **Multi-project workflows**: Switch between repos without remembering each setup
-- **CI/CD pipelines**: Auto-detect the correct package manager
-- **Developer tools**: Integrate into your IDE or custom scripts
+1. `bun.lockb` → **Bun**
+2. `pnpm-lock.yaml` → **pnpm**
+3. `yarn.lock` → **Yarn**
+4. `package-lock.json` → **npm**
+5. `package.json` → **npm** (fallback)
 
-## 🛠 API Usage
+## 🛠️ API Usage
 
 ```javascript
-import { detectPackageManager, getProjectInfo } from 'project-detector';
-
-const packageManager = detectPackageManager();
-// Returns: 'npm' | 'yarn' | 'pnpm' | 'bun'
-
-const projectInfo = getProjectInfo();
-// Returns: { name, version, scripts, dependencies, packageManager }
+// Programmatic usage coming soon!
+const shelly = require('shelly');
+await shelly.run('start the app');
 ```
 
-## 📁 Detection Priority
+## 📦 Installation
 
-The tool checks files in this order:
+```bash
+# npm
+npm install -g shelly
 
-1. `bun.lockb` → **bun**
-2. `pnpm-lock.yaml` → **pnpm**
-3. `yarn.lock` → **yarn**
-4. `package-lock.json` → **npm**
-5. `package.json` → defaults to **npm**
+# pnpm
+pnpm add -g shelly
 
-## 🤝 Contributing
+# bun
+bun install -g shelly
 
-Contributions welcome! Please read our [Contributing Guide](CONTRIBUTING.md) first.
+# yarn
+yarn global add shelly
+```
+
+## 🎯 Why Shelly?
+
+- ✅ **Zero Configuration** - Works out of the box
+- ✅ **Typo Friendly** - Understands misspellings
+- ✅ **Natural Language** - Talk to it like a human
+- ✅ **Multi-PM Support** - Bun, pnpm, Yarn, npm
+- ✅ **Smart Defaults** - Picks the right script automatically
+- ✅ **Production Ready** - Docker, CI/CD, auditing built-in
 
 ## 📄 License
 
 MIT © 2024
-
----
-
-**Made with ❤️ for developers who hate reading READMEs**

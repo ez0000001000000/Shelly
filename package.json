@@ -1,0 +1,38 @@
+{
+  "name": "shelly",
+  "version": "1.0.0",
+  "description": "AI-powered project detector and runner. Automatically detects package managers (bun, pnpm, yarn, npm) and runs your project with zero configuration.",
+  "main": "src/index.js",
+  "bin": {
+    "shelly": "./src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node src/index.js --dry-run",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "cli",
+    "detector",
+    "runner",
+    "bun",
+    "pnpm",
+    "yarn",
+    "npm",
+    "auto-detect",
+    "zero-config"
+  ],
+  "author": "Shelly Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/shelly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/shelly/issues"
+  },
+  "homepage": "https://github.com/yourusername/shelly#readme"
+}

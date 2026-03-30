@@ -1,41 +1,51 @@
-```gitignore
-# Compiled and binary files
-*.pyc
-__pycache__/
-*.class
-*.o
-*.exe
-*.dll
-*.so
-*.a
-*.obj
-*.out
-
+```
 # Dependencies
 node_modules/
-venv/
-.venv/
+
+# Environment
 .env
 .env.local
-*.env.*
+.env.*
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Editors
+.vscode/
+.idea/
 
 # Build artifacts
 dist/
 build/
-target/
-*.log
-coverage/
-htmlcov/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
+
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
 .coverage
-
-# Editors and IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*.tmp
-
-# System files
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git/modules/
 .DS_Store
 Thumbs.db
 
@@ -62,4 +72,63 @@ Thumbs.db
 *.tar.bz2
 *.tar.xz
 *.tar.zst
+
+# Test and coverage
+coverage/
+htmlcov/
+.nyc_output
+istanbul/
+.mypy_cache/
+.pytest_cache/
+.hypothesis/
+
+# Distribution / packaging
+.pybuild/
+.deps/
+.eggs/
+eggs/
+parts/
+sdist/
+develop-eggs/
+.installed.cfg
+.lib/
+.libs/
+lib/
+lib64/
+man/
+share/man/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vs/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Node.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules/
+jspm_packages/
+*.min.js
+*.min.css
+
+# Docker
+.dockerenv
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Thumbs.db:encryptable
 ```
