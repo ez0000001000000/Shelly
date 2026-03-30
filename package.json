@@ -1,10 +1,10 @@
 {
-  "name": "shelly",
+  "name": "shelly-cli",
   "version": "1.0.0",
-  "description": "AI-powered project detector and runner. Automatically detects package managers (bun, pnpm, yarn, npm) and runs your project with zero configuration.",
+  "description": "The first AI-powered CLI that understands plain English. Type 'shelly create a file named app.js' or 'shelly fix my tests'—typos included—and watch it work.",
   "main": "src/index.js",
   "bin": {
-    "shelly": "./src/index.js"
+    "shelly": "src/index.js"
   },
   "scripts": {
     "start": "node src/index.js",
@@ -13,6 +13,8 @@
   },
   "keywords": [
     "cli",
+    "ai",
+    "natural-language",
     "detector",
     "runner",
     "bun",
@@ -20,7 +22,9 @@
     "yarn",
     "npm",
     "auto-detect",
-    "zero-config"
+    "zero-config",
+    "typo-tolerance",
+    "intent-recognition"
   ],
   "author": "Shelly Team",
   "license": "MIT",
@@ -29,10 +33,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/shelly.git"
+    "url": "git+https://github.com/yourusername/shelly-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/shelly/issues"
+    "url": "https://github.com/yourusername/shelly-cli/issues"
   },
-  "homepage": "https://github.com/yourusername/shelly#readme"
+  "homepage": "https://github.com/yourusername/shelly-cli#readme"
 }
