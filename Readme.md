@@ -147,16 +147,16 @@ await shelly.run('start the app');
 
 ```bash
 # npm
-npm install -g shelly
+npm install -g shelly-cli
 
 # pnpm
-pnpm add -g shelly
+pnpm add -g shelly-cli
 
 # bun
-bun install -g shelly
+bun install -g shelly-cli
 
 # yarn
-yarn global add shelly
+yarn global add shelly-cli
 ```
 
 ## 🎯 Why Shelly?
