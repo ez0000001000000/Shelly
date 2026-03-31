@@ -1,6 +1,6 @@
 {
   "name": "shelly-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The first AI-powered CLI that understands plain English. Type 'shelly create a file named app.js' or 'shelly fix my tests'—typos included—and watch it work.",
   "main": "src/index.js",
   "bin": {
@@ -33,10 +33,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/shelly-cli.git"
+    "url": "git+https://github.com/ez0000001000000/Shelly.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/shelly-cli/issues"
+    "url": "https://github.com/ez0000001000000/Shelly/issues"
   },
-  "homepage": "https://github.com/yourusername/shelly-cli#readme"
+  "homepage": "https://github.com/ez0000001000000/Shelly#readme"
 }
