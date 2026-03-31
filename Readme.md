@@ -16,10 +16,10 @@
 
 ```bash
 # Install globally
-npm install -g shelly
+npm install -g shelly-cli
 
 # Or use directly with npx
-npx shelly start
+npx shelly-cli start
 ```
 
 ## 💬 Usage Examples
